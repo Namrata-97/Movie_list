@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.column {
+  float: left;
+  width:10%;
+}
+
+.column img{
+  opacity: 500; 
+  cursor: pointer; 
+  padding:5px;
+}
+
+.column img:hover {
+  opacity: 100;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container{
+  position:relative;
+  display: none;
+  float:right;
+  transform: translateY(-630px);
+  height:80px;
+  width:450px;
+}
+
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+h1{
+    background-color:blueviolet;
+    display: block;
+    font-size: 30px;
+    text-align: center;
+}
+
+    </style>
+</html>
+<body>
+    <h1>Movie List</h1>
+        <p>Click on the images below:</p>
+      </div>
+      
+      <!-- The four columns -->
+      <div class="row">
+        <h2>Action Movie List</h2>  
+        <div class="column">
+            <img src="War.png" alt="War" style="width:60%" onclick="myFunction(this);">
+            <p> Year:2019</p>
+            <p>Director:Anand</p>
+        </div>
+        <div class="column">
+          <img src="Bhagi3.png" alt="Bhagi3" style="width:60%" onclick="myFunction(this);">
+          <p> Year:2020</p>
+            <p>Director:Ahmed</p>
+        </div>
+        <div class="column">
+          <img src="KGF.png" alt="KGF" style="width:60%" onclick="myFunction(this);">
+          <p> Year:2019</p>
+            <p>Director:Prashanth</p>
+        </div>
+        <div class="column">
+          <img src="Kick.png" alt="Kick" style="width:60%" onclick="myFunction(this);">
+          <p> Year:2014</p>
+          <p>Director:Sajid</p>
+        </div>
+        <div class="column">
+            <img src="Bhagi.png" alt="Bhagi" style="width:60%" onclick="myFunction(this);">
+            <p> Year:2016</p>
+            <p>Director:Sabbir</p>
+          </div>
+          <div class="column">
+            <img src="Bodyguard.png" alt="Bodyguard" style="width:60%" onclick="myFunction(this);">
+            <p> Year:2011</p>
+            <p>Director:Siddique</p>
+          </div>
+      </div>
+     <div class="row">
+      <h2>Thriller Movie List</h2>  
+        <div class="column">
+            <img src="Ugly.png" alt="Ugly" style="width:60%" onclick="myFunction(this);">
+            <p> Year:2013</p>
+            <p>Director:Anurag</p>
+        </div>
+        <div class="column">
+          <img src="Talaash.png" alt="Talaash" style="width:60%" onclick="myFunction(this);">
+          <p> Year:2012</p>
+            <p>Director:Reema</p>
+        </div>
+        <div class="column">
+          <img src="Players.png" alt="Players" style="width:60%" onclick="myFunction(this);">
+          <p> Year:2012</p>
+           <p>Director:Abbas</p>
+        </div>
+        <div class="column">
+          <img src="Drishyam.png" alt="Drishyam" style="width:60%" onclick="myFunction(this);">
+          <p> Year:2015</p>
+           <p>Director:Nishikant</p>
+        </div>
+        <div class="column">
+            <img src="Kahani.png" alt="Kahani" style="width:60%" onclick="myFunction(this);">
+            <p> Year:2012</p>
+            <p>Director:Sujoy</p>
+          </div>
+          <div class="column">
+            <img src="Badla.png" alt="Badla" style="width:60%" onclick="myFunction(this);">
+            <p> Year:2019</p>
+            <p>Director:Sujoy</p>
+          </div>
+      </div>
+      
+      <div class="row">
+      <h2>Comedy Movie List</h2>  
+        <div class="column">
+            <img src="Total Dhamal.png" alt="Toatl Dhamal" style="width:60%" onclick="myFunction(this);">
+            <p> Year:2019</p>
+            <p>Director:IndraKumar</p>
+        </div>
+        <div class="column">
+          <img src="Pk.png" alt="Pk" style="width:60%" onclick="myFunction(this);">
+          <p> Year:2014</p>
+            <p>Director:Rajkumar</p>
+        </div>
+        <div class="column">
+          <img src="Housefull2.png" alt="Housefull2" style="width:60%" onclick="myFunction(this);">
+          <p> Year:2012</p>
+          <p>Director:Sajid</p>
+        </div>
+        <div class="column">
+          <img src="Housefull.png" alt="Housefull" style="width:60%" onclick="myFunction(this);">
+          <p> Year:2010</p>
+           <p>Director:Sajid</p>
+        </div>
+        <div class="column">
+            <img src="Golmaalagain.png" alt="Golmaalagain" style="width:60%" onclick="myFunction(this);">
+            <p> Year:2017</p>
+            <p>Director:Rohitshetty</p>
+          </div>
+          <div class="column">
+            <img src="Dhamal.png" alt="Dhamal" style="width:60%" onclick="myFunction(this);">
+            <p> Year:2007</p>
+            <p>Director:IndraKumar</p>
+          </div>
+      </div>
+      
+      <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:60%">
+        <div id="imgtext"></div>
+      </div>
+      
+      <script>
+      function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        var imgText = document.getElementById("imgtext");
+        expandImg.src = imgs.src;
+        imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+      }
+      </script>
+
+</body>
